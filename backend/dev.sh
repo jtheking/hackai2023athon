@@ -1,1 +1,1 @@
-poetry run uvicorn app:app --reload
+poetry run python3 app.py

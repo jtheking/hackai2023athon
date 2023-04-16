@@ -65,6 +65,9 @@ const styles = StyleSheet.create({
 });
 
 export default function Home(){
+
+
+
     return(
     
         <View>

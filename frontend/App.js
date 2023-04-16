@@ -1,24 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
+import React, { useState, useEffect} from 'react';
 import { SafeAreaView } from 'react-native';
-import { useFonts } from 'expo-font';
 import Recipe from './pages/Recipe';
 import Home from './pages/Home';
+import { useFonts, Fraunces_400Regular } from '@expo-google-fonts/fraunces';
 
+  
 export default function App() {
 
-  const [loaded] = useFonts({
+  const [food, setFood] = useState(["eggs", "mushrooms", "oranges"]);
+  const [recipes, setRecipes] = useState([]);
 
-    Fraunces: require('./assets/fonts/fraunces/frauncessoftwonkopszwght.ttf'),
-  })
+  let [fontsLoaded] = useFonts({
+     Fraunces_400Regular,
+  });
 
-  if(!loaded){
-
+  if (!fontsLoaded) {
     return null;
   }
 
+
+
   return (
-    <SafeAreaView>
-      <Home/>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#eee'}}>
+      <Recipe food={food} setFood={setFood} recipes={recipes} setRecipes={setRecipes}/>
     </SafeAreaView>
   );
 }
