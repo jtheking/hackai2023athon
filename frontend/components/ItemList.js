@@ -9,20 +9,22 @@ export default function ItemList(props) {
   return (
     <View>
       <FlatList
+        
         showsVerticalScrollIndicator={false}
         data={recipes}
+        ItemSeparatorComponent={() => <Divider width={2} style={{ backgroundColor: 'white'}}/>}
         renderItem={({item}) => (
             <View style={{ backgroundColor: 'white'}}>
-          <View style={{ width: '100%', height: 300, paddingHorizontal: 6, paddingTop: 6 }}>
-            <View style={{ width: '100%' , height: 150, backgroundColor: 'gray'}}></View>
-            <View  style={{paddingHorizontal: 6, paddingTop: 6}}>
-            <Text style={{ fontFamily: 'Fraunces', fontSize: 24, marginTop: 5}}>{item.title}</Text>
-            <Text style={{fontFamily: 'Fraunces'}}>Ingredients:</Text>
-            <Text style={{ width: '100%', height: '100%', fontFamily: 'Fraunces', fontSize: 16}}>{item.ingredients}</Text>
+          <View style={{ width: '100%', height: 300, paddingHorizontal: 15, paddingTop: 10 }}>
+            <View style={{ width: '100%' , height: 150, borderRadius: 25, backgroundColor: '#D9D9D9'}}></View>
+            <View  style={{paddingHorizontal: 10, paddingTop: 6}}>
+            <Text style={{ fontFamily: 'Fraunces_400Regular', fontSize: 24, marginTop: 5}}>{item.title}</Text>
+            <Text style={{fontFamily: 'Fraunces_400Regular', fontSize: 18}}>Ingredients:</Text>
+            <Text style={{ width: '100%', height: '100%', fontFamily: 'Fraunces_400Regular', fontSize: 16}}>{item.ingredients}</Text>
             </View>
           </View>
-           <Divider width={1.8} style={{marginVertical: 20}}/>
            </View>
+           
         )}
         keyExtractor={item => item.id}
       />

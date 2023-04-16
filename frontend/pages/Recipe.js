@@ -8,7 +8,6 @@ import ItemList from '../components/ItemList';
 
 export default function Recipe(props){
 
-
     const recipesData = [
         {
             id: 0,
@@ -65,27 +64,44 @@ export default function Recipe(props){
         }
     ]
 
-    const [recipes, setRecipes] = useState(recipesData);
 
     const filterRecipes = () => {
         
-        console.log(props.food)
-
+    
         const filteredData = recipesData.filter(recipe => {
           return props.food.every(ingredient => recipe.ingredients.includes(ingredient));
         });
-        setRecipes(filteredData);
+        props.setRecipes(filteredData);
         setExplore(false);
 
       }
   
-    const getRecipes = () => {
+    const getRecipes = async () => {
 
-        console.log(recipesData)
-        setRecipes(recipesData);
+        console.log('Getting recipes...')
+        
+        /*const recipesData = await fetch('https://hackai2023athon-production.up.railway.app/recipes_with_images', {
+            method: 'POST',
+            headers: {
+
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                ingredients: props.food,
+            })
+        })
+        */
+
+        props.setRecipes(recipesData);
         setExplore(true)
 
     }
+
+    useEffect(() => {
+
+        getRecipes()
+
+    }, [])
 
 
     const [explore, setExplore] = useState(true)
@@ -94,14 +110,14 @@ export default function Recipe(props){
     <View>
         <View style={{ backgroundColor: '#fff',  height: 120, width: '100%'}}>
             <View style={{  marginTop: 20}} >
-                <Text style={{ fontSize: 32, fontFamily: 'Fraunces', width: '100%', textAlign: 'center'}}>Recipes</Text>
+                <Text style={{ fontSize: 32, fontFamily: 'Fraunces_400Regular', width: '100%', textAlign: 'center'}}>Recipes</Text>
             </View>
             <View style={{ marginTop: 10}}>
                 <FilterButton explore={explore} setExplore={setExplore} getRecipes={getRecipes} filterRecipes={filterRecipes} />
             </View>
         </View>
         <View>
-            <ItemList recipes={recipes}/>   
+            <ItemList recipes={props.recipes}/>   
         </View>
     </View>)
 
