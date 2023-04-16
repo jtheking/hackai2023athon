@@ -118,6 +118,10 @@ def set_ingredients(i: list[str]):
     ingredients = list(set(i))
     return ingredients
 
+@app.get("/get_ingredients")
+def get_ingredients():
+    return ingredients
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
