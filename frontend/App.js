@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { View } from 'react-native';
 import Recipe from './pages/Recipe';
 import Home from './pages/Home';
 import { useFonts, Fraunces_400Regular, Fraunces_700Bold } from '@expo-google-fonts/fraunces';
@@ -15,6 +16,7 @@ export default function App() {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [nonFilteredRecipes, setNonFilteredRecipes] = useState([]);
+
 
   let [fontsLoaded] = useFonts({
      Fraunces_400Regular,
@@ -42,11 +44,19 @@ function BottomTabs(props) {
 
   return (
     <Tab.Navigator 
-    initialRouteName='Recipe'>
-      <Tab.Screen  options={ {headerShown: false, tabBarIcon: () => {
+    initialRouteName='Home'
+      >
+      <Tab.Screen  options={ { tabBarActiveTintColor: "#f5610a",
+      tabBarInactiveTintColor: "#555",tabBarLabelStyle: {
+        fontFamily: 'Fraunces_700Bold',
+        fontSize: 11,
+      }, headerShown: false, tabBarIcon: () => {
         return (<Ionicons name="home" size={30} color="black" />)
-      }  }}name="Home" children={() => < Home /> } />
-      <Tab.Screen  options={ {headerShown: false, tabBarIcon: () => {
+      }  }}name="Home" children={() => < Home food={props.food} setFood={props.setFood} /> } />
+      <Tab.Screen  options={ {  tabBarLabelStyle: {
+        fontFamily: 'Fraunces_700Bold',
+        fontSize: 11,
+      }, title: "Recipes", headerShown: false, tabBarIcon: () => {
         return (<FontAwesome name="list-alt" size={24} color="black" />)
       }  }} name="Recipe" children={ () => <Recipe food={props.food} setFood={props.setFood} 
       recipes={props.recipes} setRecipes={props.setRecipes} 
