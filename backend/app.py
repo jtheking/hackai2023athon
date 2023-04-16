@@ -25,6 +25,8 @@ class RecipeBody(BaseModel):
 
 EXPIRE = 60*60*24
 
+ingredients: list[str] = []
+
 def key_builder(
         func,
         namespace: Optional[str] = "",
@@ -60,6 +62,11 @@ async def gen_recipes(req: Request, b: RecipeBody) -> GenRecipesOutput:
     return GenRecipesOutput(recipes_with_extra_ingredients=extra, recipes_with_limited_ingredients=limited) # type: ignore
 
 @app.post("/recipes_with_images")
+async def gen_recipes_with_images2(req: Request) -> GenRecipesWithImagesOutput:
+    extra, limited = generate_recipes(ingredients, True)
+    return GenRecipesWithImagesOutput(recipes_with_extra_ingredients=extra, recipes_with_limited_ingredients=limited) # type: ignore
+
+@app.post("/recipes_with_images/reg")
 @cache(expire=EXPIRE, coder=JsonCoder)
 async def gen_recipes_with_images(req: Request, b: RecipeBody) -> GenRecipesWithImagesOutput:
     extra, limited = generate_recipes(b.ingredients, True)
@@ -69,6 +76,12 @@ async def gen_recipes_with_images(req: Request, b: RecipeBody) -> GenRecipesWith
 async def startup():
     redis = aioredis.from_url(os.environ["REDIS_URL"], encoding="utf8", decode_responses=True)
     FastAPICache.init(RedisBackend(redis), prefix="fastapi-cache", key_builder=key_builder)
+
+@app.post("/set_ingredients")
+def set_ingredients(i: list[str]):
+    global ingredients
+    ingredients = i
+    return ingredients
 
 if __name__ == "__main__":
     import uvicorn
