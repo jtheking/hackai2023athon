@@ -90,9 +90,10 @@ class FormattedRecipeWithImage(FormattedRecipe):
 
 def _raw_recipe_to_formatted(raw_recipe: str) -> FormattedRecipe:
     split = raw_recipe.strip().split("\n")
+    split = [x for x in split if x.strip() != '']
     print(split)
     title = split[0].split(":")[-1].strip()
-    ingredients = split[1].strip().split(",")
+    ingredients = split[1].replace("Ingredients:", "").strip().split(",")
     steps = split[2:]
     return FormattedRecipe(title=title, ingredients=ingredients, instructions=steps, id=str(uuid4()))
 
