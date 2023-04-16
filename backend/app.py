@@ -67,6 +67,7 @@ async def gen_recipes(req: Request, b: RecipeBody) -> GenRecipesOutput:
     return GenRecipesOutput(recipes_with_extra_ingredients=extra, recipes_with_limited_ingredients=limited) # type: ignore
 
 @app.post("/recipes_with_images")
+@cache(expire=EXPIRE, coder=JsonCoder)
 async def gen_recipes_with_images2(req: Request) -> GenRecipesWithImagesOutput:
     extra, limited = generate_recipes(ingredients, True)
     return GenRecipesWithImagesOutput(recipes_with_extra_ingredients=extra, recipes_with_limited_ingredients=limited) # type: ignore
