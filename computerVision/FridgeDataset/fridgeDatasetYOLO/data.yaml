@@ -1,0 +1,23 @@
+train: fridgeDatasetYOLO/train/images
+val: fridgeDatasetYOLO/valid/images
+test: fridgeDatasetYOLO/test/images
+
+nc: 16
+names:
+  0: 'avocado'
+  1: 'beef'
+  2: 'bell pepper'
+  3: 'broccoli'
+  4: 'butter'
+  5: 'cabbage'
+  6: 'carrot'
+  7: 'cheese'
+  8: 'chicken'
+  9: 'egg'
+  10: 'lettuce'
+  11: 'milk'
+  12: 'onion'
+  13: 'pickle'
+  14: 'tomato'
+  15: 'zucchini'
+

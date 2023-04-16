@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b6a5104-4517-4e69-8415-ca03e639a118" name="Changes" comment="" />
+    <list default="true" id="7b6a5104-4517-4e69-8415-ca03e639a118" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/formatDataset.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/generateFridgePlacement.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/computerVision/captureScreen.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/computerVision/model/fingerprint.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/computerVision/model/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/computerVision/model/variables/variables.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/computerVision/model/variables/variables.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/allItem1.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/allItem1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/00-EmptyFridge.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/00-EmptyFridge.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Avocado.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Avocado.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/BellPepper.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/BellPepper.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Brocolli.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Brocolli.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Butter.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Butter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Cabbage.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Cabbage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Carrot.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Carrot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Cheese.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Cheese.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Chicken.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Chicken.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Egg.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Egg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/GroundBeef.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/GroundBeef.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Lettuce.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Lettuce.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Milk.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Milk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Onion.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Onion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Pickle.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Pickle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Tomato.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Tomato.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/individualItem/Zucchini.png" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/individualItem/Zucchini.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeDataset/workspace.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/FridgeDataset/workspace.xcf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +61,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/danng/Documents/GitHub/hackai2023athon/computerVision/yolov5",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -40,6 +69,16 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danng\Documents\GitHub\hackai2023athon\computerVision\yolov5" />
+      <recent name="C:\Users\danng\Documents\GitHub\hackai2023athon\computerVision" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danng\Documents\GitHub\hackai2023athon\computerVision\FridgeDataset" />
+      <recent name="C:\Users\danng\Documents\GitHub\hackai2023athon\computerVision" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,11 +87,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681588027119</updated>
-      <workItem from="1681588047854" duration="987000" />
+      <workItem from="1681588047854" duration="990000" />
+      <workItem from="1681610794599" duration="14047000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
