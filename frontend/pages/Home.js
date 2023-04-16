@@ -1,126 +1,136 @@
-import React from 'react';
-import { ScrollView, StyleSheet, Text, View} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Shadow } from 'react-native-shadow-2';
+import { SafeAreaView, FlatList, StyleSheet, Text, View, ScrollView} from 'react-native';
 import { Image } from 'react-native';
-import { FlatList, SafeAreaView, scrollView } from 'react-native';
-
-const data = [
-  { id: '1', image: '../assets/preview16.jpg' },
-  { id: '2', image: '../assets/preview16.jpg' },
-  { id: '3', image: '../assets/preview16.jpg' },
-  { id: '4', image: '../assets/preview16.jpg' },
-  { id: '5', image: '../assets/preview16.jpg' },
-  { id: '6', image: '../assets/preview16.jpg' },  
-];
 
 
 const styles = StyleSheet.create({
-  tinyLogo: {
-    width: 50,
-    height: 50,
-    resizeMode: 'contain',
-    alignItems: 'center',
-    paddingTop: 20,
-  },
-  logo: {
-    width: 66,
-    height: 58,
-  },
+
   titleText: {
-    fontSize: 30,
-    fontFamily: 'Fraunces',
-    fontWeight: 'bold',
-    color: '#000000',
+
+    fontSize: 40,
+    height: 60,
+    color: '#191923', 
+    fontFamily: 'Fraunces_700Bold',
     textAlign: 'center',
-    padding: 5,
-    
+
+   
   },
-  screen:{
+  fridge: {
     width: '100%',
-    height: '50%',
+    height: '36%',
     resizeMode: 'cover',
     alignItems: 'center',
-    paddingTop: 0,
     borderRadius: 10,
     
   },
   image: {
     flex: 1,
-    margin: 1,
-    height: 70,
-    width: 70,
-    backgroundColor: '#fff',
-    borderColor: 'black',
-    borderWidth: 2,
+    height: 80,
+    width: 80,
+    marginRight: 10,
+    marginBottom: 5,
     borderRadius: 10,
-  
+    
   },
 
   itemContainer: {
     flex: 1,
-    alignContent: 'center',
-    alignItems: 'center',
+    overflow: 'visible',
+    
   },
 
 
 });
 
-export default function Home(){
+export default function Home(props){
+    const [images, setImages] = useState([])
+    const getFood = async () => {
 
 
+        const response = await fetch('https://hackai2023athon-production.up.railway.app/get_ingredients')
+        const data = await response.json()
+        console.log(data)
+        props.setFood(data)
+        const imgs = []
+        for (const item of data) {
+            const img = await fetch(`https://hackai2023athon-production.up.railway.app/image?recipe_title=${item}`, {
+                method: 'POST',
+            })
+            const imgData = await img.json()
+            imgs.push(imgData)
+        }
+        console.log(imgs)
+        setImages(imgs)
+       
+    }
+
+    useEffect(() => {
+        getFood()
+    }, [])
 
     return(
     
-        <View>
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
         
-        <Text style={styles.titleText}>
-        Live View
-        </Text>
-        <Image style={styles.screen}
-        source={require('../assets/food.png')}>
-        </Image>
+     
+        <View style={{ backgroundColor:'#fff', paddingHorizontal: 10 }}>
+
+        <View style={{ backgroundColor: '#fff', borderBottomEndRadius: 30, borderBottomStartRadius: 30, marginBottom: 6,}}>
+            <Text style={styles.titleText}>
+            Live View
+            </Text>
+        </View>
+
+      
+ 
+        <Image style={styles.fridge} source={require("../assets/food.png")}/>
         
+
+      
+        <ScrollView showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ marginTop: 20, borderColor: '#fff' , borderWidth: 2}}>
+      
         <Text style={styles.titleText}>
         Items
         </Text>
-        
+      
         <FlatList
-          data={data}
-          renderItem={({ item }) => <GridItem item={item} />}
-          keyExtractor={(item) => item.id}
-          numColumns={3}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          data={props.food.slice(0, props.food.length - 3)}
+          renderItem={({ item, index }) => <GridItem item={item} img={images[index]} />}
+          keyExtractor={(item, index) => "normal-"+index}
         />
         
-
+        
         <Text style={styles.titleText}>
         Spoiled
         </Text>
+        
 
         <FlatList
-          data={data}
-          renderItem={({ item }) => <GridItem item={item} />}
-          keyExtractor={(item) => item.id}
-          numColumns={3}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          data={props.food.slice(-3)}
+          renderItem={({ item, index }) => <GridItem item={item} img={images[props.food.length-index-1]} />}
+          keyExtractor={(item, index) => "spoiled-"+index}
         />  
+        </ScrollView>
         </View>
+        </SafeAreaView>
   
     )
 }
 
-const GridItem = ( item ) => {
+const GridItem = ( {img} ) => {
+    console.log({img})
   return (
     <View style={styles.itemContainer}>
-      <Image source={require('../assets/preview16.jpg')} style={styles.image} />  
+        <Shadow>
+        <Image source={{uri: img}} style={styles.image} />  
+        </Shadow>
     </View>
   );
 };
 
-const getItems = () => {
-  return fetch('http://localhost:3000/api/items')
-  .then((response) => response.json())
-  .then((json) => {
-    return json;
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-}

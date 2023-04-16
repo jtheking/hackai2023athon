@@ -87,6 +87,7 @@ import ItemList from '../components/ItemList';
 
         
         const receivedJSON = await recipesData.json()
+        console.log(receivedJSON)
         props.setNonFilteredRecipes(receivedJSON.recipes_with_extra_ingredients);
         props.setFilteredRecipes(receivedJSON.recipes_with_limited_ingredients);
 
