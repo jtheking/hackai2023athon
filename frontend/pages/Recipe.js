@@ -4,8 +4,13 @@ import { View, Text} from 'react-native';
 
 export default function Recipe(props){
 
-    return (<View>
-        <Text>Recipe</Text>
+
+
+    return (
+    <View>
+        <View>
+        <Text style={{ fontSize: 24, fontFamily: 'Fraunces'}}>Recipe</Text>
+        </View>
     </View>)
 
 
