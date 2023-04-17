@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b6a5104-4517-4e69-8415-ca03e639a118" name="Changes" comment="" />
+    <list default="true" id="7b6a5104-4517-4e69-8415-ca03e639a118" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computerVision/AWS-training/SageMaker/yolov5/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/AWS-training/SageMaker/yolov5/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computerVision/AWS-training/SageMaker/yolov5/data/scripts/download_weights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/AWS-training/SageMaker/yolov5/data/scripts/download_weights.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computerVision/AWS-training/SageMaker/yolov5/data/scripts/get_coco.sh" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/AWS-training/SageMaker/yolov5/data/scripts/get_coco.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computerVision/AWS-training/SageMaker/yolov5/data/scripts/get_coco128.sh" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/AWS-training/SageMaker/yolov5/data/scripts/get_coco128.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computerVision/AWS-training/SageMaker/yolov5/data/scripts/get_imagenet.sh" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/AWS-training/SageMaker/yolov5/data/scripts/get_imagenet.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/computerVision/captureScreen.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/computerVision/captureScreen.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1681588027119</updated>
       <workItem from="1681588047854" duration="990000" />
-      <workItem from="1681610794599" duration="14757000" />
+      <workItem from="1681610794599" duration="21265000" />
     </task>
     <servers />
   </component>
