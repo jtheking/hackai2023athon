@@ -1,6 +1,6 @@
 # Inteli-Fridge
 ### A tool that tackles food waste by suggesting meals based on what's in your fridge
-devpost link: https://devpost.com/software/intelli-fridge/edit 
+https://devpost.com/software/intelli-fridge?ref_content=user-portfolio&ref_feature=in_progress
 ## Inspiration
 Did you know that one-third of all food produced in the world goes to waste? That's a shocking statistic, considering that there are still millions of people who are starving. This is why we wanted to create an application that can help empower us reducing food waste.
 
